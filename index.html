@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLDCA - Sri Lanka Document Controllers Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        /* Custom Styles */
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+        /* Simple Fade-in Animation on Scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scale-on-hover {
+            transition: transform 0.3s ease;
+        }
+        .scale-on-hover:hover {
+            transform: scale(1.05);
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <header class="sticky-header shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+                    <div class="bg-blue-900 text-white p-2 rounded-lg">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold" style="color: #1e3a8a;">SLDCA</h1>
+                        [cite_start]<p class="text-xs text-gray-600">Sri Lanka's First Document Control Academy [cite: 7]</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-blue-900 font-medium">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-900 font-medium">About</a>
+                    <a href="#courses" class="text-gray-600 hover:text-blue-900 font-medium">Courses</a>
+                    <a href="#services" class="text-gray-600 hover:text-blue-900 font-medium">Services</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-blue-900 font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-900 font-medium">Contact</a>
+                </nav>
+                <button class="md:hidden text-gray-600" id="mobile-menu-button">
+                    <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m4 6h16"/></svg>
+                </button>
+            </div>
+            <nav id="mobile-nav" class="md:hidden mt-4 hidden">
+                <a href="#home" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 rounded">Home</a>
+                <a href="#about" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 rounded">About</a>
+                <a href="#courses" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 rounded">Courses</a>
+                <a href="#services" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 rounded">Services</a>
+                <a href="#testimonials" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 rounded">Testimonials</a>
+                <a href="#contact" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 rounded">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="relative text-white h-[80vh] flex items-center justify-center text-center overflow-hidden">
+            <video autoplay muted loop playsinline class="hero-video-bg">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-people-working-on-a-big-table-in-a-modern-office-39404-large.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="relative z-10 p-4 fade-in">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+                    Empowering Professionals in Document Control & Records Management Excellence.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8">
+                    To be the leading online training academy in Sri Lanka that produces globally competent Document Controllers.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#courses" class="bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg">
+                        Explore Courses →
+                    </a>
+                    <a href="#contact" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-all shadow-lg">
+                        Enroll Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-3">Welcome to SLDCA</h2>
+                    [cite_start]<p class="text-lg text-gray-600">Sri Lanka's First and Only Specialized Training Institute for Document Control. [cite: 7]</p>
+                    <div class="w-24 h-1 bg-blue-900 mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="fade-in">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission and Purpose</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            [cite_start]We exist to bridge the gap for Sri Lanka's talented youth, many of whom finish school without a clear career path. [cite: 2] [cite_start]Document Control Management is a high-demand global profession, yet it remains largely unknown in Sri Lanka. [cite: 4]
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            [cite_start]SLDCA is the first institution in the country dedicated to providing structured training in this field. [cite: 5, 7] [cite_start]We aim to equip our youth with the professional skills needed to secure valuable positions in robust job markets like the Middle East, UK, Ireland, and Australia, where Document Controllers are critical. [cite: 6, 8, 10]
+                        </p>
+                        <p class="text-gray-700 leading-relaxed font-semibold">
+                            [cite_start]This initiative is not just about building careers; it's about reducing youth unemployment and strengthening the Sri Lankan economy through foreign income. [cite: 12, 13]
+                        </p>
+                    </div>
+                    <div class="fade-in">
+                         <div class="aspect-w-16 aspect-h-9 rounded-lg shadow-2xl overflow-hidden">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 md:p-12 rounded-2xl fade-in">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-gray-900">Founder's Message</h3>
+                        <div class="w-20 h-1 bg-blue-900 mx-auto mt-2"></div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-8 items-center text-center md:text-left">
+                        <img src="https://i.pravatar.cc/150?u=viraj" alt="Founder Viraj Senanayake" class="w-32 h-32 rounded-full shadow-lg">
+                        <div class="md:col-span-2">
+                            <h4 class="text-2xl font-bold text-gray-900">Viraj Senanayake</h4>
+                            <p class="text-blue-800 font-semibold mb-3">Founder & Chief Instructor</p>
+                            <p class="text-gray-700 leading-relaxed">
+                                "With over 10 years of international experience, I founded SLDCA to empower Sri Lankan youth with globally recognized skills. Having seen the high demand for Document Controllers worldwide, I am committed to bringing this training to Sri Lanka to reduce unemployment and build pathways to prosperity."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-3">Our Flagship Program</h2>
+                    <p class="text-lg text-gray-600">A comprehensive curriculum designed for global success.</p>
+                    <div class="w-24 h-1 bg-blue-900 mx-auto mt-4"></div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-4xl mx-auto fade-in">
+                    <div class="bg-gradient-to-r from-blue-900 to-blue-700 p-8 text-white">
+                        <h3 class="text-3xl font-bold mb-2">Professional Document Control Management System</h3>
+                        <p class="text-blue-200 mb-6">Master the complete lifecycle of document management.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                            <div class="bg-white bg-opacity-20 p-4 rounded-lg"><p class="font-bold text-xl">10</p><p class="text-sm">Modules</p></div>
+                            <div class="bg-white bg-opacity-20 p-4 rounded-lg"><p class="font-bold text-xl">10</p><p class="text-sm">Weeks</p></div>
+                            <div class="bg-white bg-opacity-20 p-4 rounded-lg"><p class="font-bold text-xl">Online</p><p class="text-sm">100%</p></div>
+                            <div class="bg-white bg-opacity-20 p-4 rounded-lg"><p class="font-bold text-xl">Global</p><p class="text-sm">Standards</p></div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">What You Will Learn:</h4>
+                        <ul class="grid md:grid-cols-2 gap-x-8 gap-y-3 text-gray-700">
+                            [cite_start]<li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>Document Lifecycle & Processes [cite: 30]</li>
+                            [cite_start]<li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>ISO Standards Compliance (ISO 9001, 15489) [cite: 33]</li>
+                            [cite_start]<li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>DMS Software Training (Aconex, SharePoint etc.) [cite: 34, 179]</li>
+                            [cite_start]<li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>AI Tools Integration (ChatGPT, Copilot) [cite: 242, 243]</li>
+                             [cite_start]<li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>Records Management & Archiving [cite: 196]</li>
+                            [cite_start]<li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>Professional Communication Skills [cite: 262]</li>
+                        </ul>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                             <a href="#contact" class="bg-blue-800 text-white text-center px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all">Enroll Now →</a>
+                             <a href="Full course syllabus - Professional Document Control Management System.pdf" target="_blank" class="bg-gray-200 text-gray-800 text-center px-8 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-all">Download Full Syllabus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-3">Your Journey to Success</h2>
+                    <p class="text-lg text-gray-600">We provide complete support for your international career journey.</p>
+                    <div class="w-24 h-1 bg-blue-900 mx-auto mt-4"></div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all scale-on-hover fade-in text-center"><h3 class="text-xl font-bold text-gray-900 mb-2">Professional CV/Resume Making</h3><p class="text-gray-600">Internationally recognized CVs tailored for Document Control roles.</p></div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all scale-on-hover fade-in text-center"><h3 class="text-xl font-bold text-gray-900 mb-2">Flight Booking Assistance</h3><p class="text-gray-600">Hassle-free support for your travel arrangements.</p></div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all scale-on-hover fade-in text-center"><h3 class="text-xl font-bold text-gray-900 mb-2">Dubai Visa Support</h3><p class="text-gray-600">Complete guidance for UAE visa applications.</p></div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all scale-on-hover fade-in text-center"><h3 class="text-xl font-bold text-gray-900 mb-2">Finland Student Visa Guidance</h3><p class="text-gray-600">Expert consultation for the student visa process to Finland.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-3">Gallery</h2>
+                    <p class="text-lg text-gray-600">Moments from our training sessions and student successes.</p>
+                    <div class="w-24 h-1 bg-blue-900 mx-auto mt-4"></div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="fade-in"><img src="https://images.unsplash.com/photo-1556740738-b6a63e2775df?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Gallery Image 1" class="rounded-lg shadow-md hover:opacity-90 transition-opacity cursor-pointer"></div>
+                    <div class="fade-in"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Gallery Image 2" class="rounded-lg shadow-md hover:opacity-90 transition-opacity cursor-pointer"></div>
+                    <div class="fade-in"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Gallery Image 3" class="rounded-lg shadow-md hover:opacity-90 transition-opacity cursor-pointer"></div>
+                    <div class="fade-in"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Gallery Image 4" class="rounded-lg shadow-md hover:opacity-90 transition-opacity cursor-pointer"></div>
+                </div>
+                 </div>
+        </section>
+
+        <section id="testimonials" class="py-20 bg-blue-900 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl font-bold mb-3">Student Success Stories</h2>
+                    <p class="text-lg text-blue-200">Hear from our graduates working worldwide.</p>
+                </div>
+                <div class="swiper-container max-w-3xl mx-auto fade-in">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide text-center p-4">
+                            <img src="https://i.pravatar.cc/100?u=kasun" alt="Kasun Perera" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white">
+                            <p class="text-xl italic mb-4">"This course transformed my career. Within 3 months of completion, I secured a position in Dubai with an excellent salary package."</p>
+                            <h4 class="text-xl font-bold">Kasun Perera</h4>
+                            <p class="text-blue-200">Document Controller, Dubai</p>
+                        </div>
+                         <div class="swiper-slide text-center p-4">
+                            <img src="https://i.pravatar.cc/100?u=nimali" alt="Nimali Fernando" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white">
+                            <p class="text-xl italic mb-4">"SLDCA provided practical knowledge that I use daily. The trainers are experienced and the curriculum is world-class."</p>
+                            <h4 class="text-xl font-bold">Nimali Fernando</h4>
+                            <p class="text-blue-200">Records Manager, UK</p>
+                        </div>
+                        <div class="swiper-slide text-center p-4">
+                            <img src="https://i.pravatar.cc/100?u=chaminda" alt="Chaminda Silva" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white">
+                            <p class="text-xl italic mb-4">"As a fresh graduate, this course gave me the specialized skills employers were looking for. Highly recommended!"</p>
+                            <h4 class="text-xl font-bold">Chaminda Silva</h4>
+                            <p class="text-blue-200">Junior Document Controller, Qatar</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination mt-8"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-3">Get In Touch</h2>
+                    <p class="text-lg text-gray-600">Start your journey to global success today. We're here to help.</p>
+                    <div class="w-24 h-1 bg-blue-900 mx-auto mt-4"></div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-gray-50 p-8 rounded-2xl fade-in">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <input type="text" placeholder="Full Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800">
+                            <input type="email" placeholder="Email Address" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800">
+                            <textarea rows="4" placeholder="Your Message" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800"></textarea>
+                            <button type="submit" class="w-full bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-all">Submit Inquiry</button>
+                        </form>
+                    </div>
+                    <div class="fade-in">
+                         <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                         <div class="space-y-6">
+                             [cite_start]<p class="flex items-start"><strong class="w-24">Phone:</strong><a href="tel:+971507326053" class="text-blue-800 hover:underline">+971 50 732 6053</a> [cite: 46]</p>
+                             [cite_start]<p class="flex items-start"><strong class="w-24">Email:</strong><a href="mailto:Viraj.se@gmail.com" class="text-blue-800 hover:underline">Viraj.se@gmail.com</a> [cite: 45]</p>
+                             <p class="flex items-start"><strong class="w-24">Location:</strong>Colombo, Sri Lanka</p>
+                             <p class="flex items-start"><strong class="w-24">WhatsApp:</strong><a href="https://wa.me/971507326053" target="_blank" class="text-green-600 hover:underline">Chat with us</a></p>
+                         </div>
+                         <div class="mt-8">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253482.0003496924!2d79.68288250219728!3d6.921838321901044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo!5e0!3m2!1sen!2slk!4v1672304182512!5m2!1sen!2slk" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-md"></iframe>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-bold text-lg">SLDCA</h3>
+            <p class="text-sm text-gray-400 mb-6">Empowering Sri Lankan professionals with world-class Document Control training.</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            </div>
+            <p class="text-gray-500 text-sm">© 2025 Sri Lanka Document Controllers Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/971507326053" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="30" height="30"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileNav.classList.toggle('hidden');
+            });
+
+            // Testimonials Slider (SwiperJS)
+            const swiper = new Swiper('.swiper-container', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            // Fade-in animations on scroll
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeInElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
