@@ -1,0 +1,218 @@
+/* --- SLDCA OFFICIAL THEME --- */
+
+/* 1. FONT IMPORT & ROOT VARIABLES */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap');
+
+:root {
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Lato', sans-serif;
+
+    --color-primary: #1E3A8A; /* Deep Navy Blue */
+    --color-secondary: #F8F7F2; /* Ivory White */
+    --color-accent: #D4AF37; /* Gold */
+    
+    --text-heading: #1F2937; /* Charcoal Gray */
+    --text-body: #374151; /* Dark Slate */
+    --text-light: #6B7280; /* Medium Gray */
+}
+
+/* 2. GENERAL BODY & TYPOGRAPHY STYLES */
+* {
+    font-family: var(--font-body);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+    color: var(--text-body);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    color: var(--text-heading);
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #B8860B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-navy {
+    color: var(--color-primary);
+}
+
+/* 3. LAYOUT & SHARED COMPONENTS */
+.glass-light {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(200, 200, 200, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07);
+}
+
+.shadow-elegant {
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.08);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: #1a307a; }
+
+/* 4. HEADER & NAVIGATION */
+header {
+    background: rgba(248, 247, 242, 0.8); /* Ivory with blur */
+}
+header a {
+    color: var(--text-heading);
+    font-weight: 600;
+}
+header a:hover {
+    color: var(--color-primary);
+}
+
+/* Enroll Now Button */
+header button {
+    background-color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+header button:hover {
+    background-color: var(--text-heading);
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+    transform: translateY(-2px);
+}
+
+
+/* 5. HERO SECTION */
+.hero-slide .absolute {
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 58, 138, 0.4) 100%);
+}
+.hero-slide h1 .text-yellow-300 {
+    color: var(--color-accent);
+}
+.hero-slide p {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+/* Hero Buttons */
+#home button {
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+#home button:first-of-type {
+    background-color: white;
+    color: var(--color-primary);
+}
+#home button:first-of-type:hover {
+    background-color: var(--color-secondary);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+#home button:last-of-type {
+    background: transparent;
+    border: 2px solid white;
+}
+#home button:last-of-type:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* 6. SECTIONS STYLING */
+section {
+    background-color: white;
+}
+section#courses, section#testimonials, section#contact, footer {
+    background-color: var(--color-secondary); /* Ivory Background */
+}
+
+/* Stats Section */
+#about .counter {
+    font-family: var(--font-heading);
+}
+
+/* Founder Photo */
+#about .glass-light {
+    border: none;
+    box-shadow: var(--shadow-elegant);
+}
+
+/* Course Cards */
+#courses .glass-light {
+    transition: all 0.4s ease;
+}
+#courses .glass-light:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-8px);
+}
+#courses button {
+    background-color: var(--color-primary);
+}
+#courses button:hover {
+    background-color: var(--text-heading);
+}
+
+/* Services */
+#services .glass-light:hover .group-hover\:rotate-12 {
+    transform: rotate(12deg) scale(1.1);
+}
+
+/* Testimonials */
+#testimonials .swiper-pagination-bullet-active {
+    background: var(--color-primary);
+}
+#testimonials .text-yellow-500 {
+    color: var(--color-accent);
+}
+
+/* Contact Section */
+#contact input, #contact textarea, #contact select {
+    background-color: #FFFFFF;
+    border-width: 1px;
+    border-color: #D1D5DB;
+    transition: border-color 0.3s ease;
+}
+#contact input:focus, #contact textarea:focus, #contact select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.2);
+    outline: none;
+}
+#contact button[type="submit"] {
+    background-color: var(--color-primary);
+}
+#contact button[type="submit"]:hover {
+    background-color: var(--text-heading);
+}
+
+/* 7. FOOTER */
+footer {
+    border-top: 1px solid #e5e7eb;
+}
+
+/* 8. WHATSAPP & PRELOADER */
+.whatsapp-float {
+    background: #25D366;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+.whatsapp-float:hover {
+    background: #128C7E;
+    transform: scale(1.1);
+}
+.loader {
+    border: 4px solid var(--color-primary);
+    border-bottom-color: transparent;
+}
