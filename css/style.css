@@ -10,7 +10,7 @@
     --color-primary: #1E3A8A; /* Deep Navy Blue */
     --color-secondary: #F8F7F2; /* Ivory White */
     --color-accent: #D4AF37; /* Gold */
-    
+
     --text-heading: #1F2937; /* Charcoal Gray */
     --text-body: #374151; /* Dark Slate */
     --text-light: #6B7280; /* Medium Gray */
@@ -97,79 +97,62 @@ header button:hover {
 }
 
 /* 5. HERO SECTION */
-/* Remove the dark overlay - using a very subtle shadow instead */
+
+/* Subtle Overlay & Text Readability */
 #home .absolute.inset-0 {
-    /* background: linear-gradient(90deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 58, 138, 0.4) 100%); */ /* REMOVED OLD OVERLAY */
-    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.0) 70%, rgba(0,0,0,0.4) 100%); /* Subtle top/bottom shadow for text contrast */
-    opacity: 1; /* Ensure this is 1 */
+    /* Removed the dark blue gradient overlay */
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.0) 30%, rgba(0,0,0,0.0) 70%, rgba(0,0,0,0.4) 100%); /* Optional: Adds subtle shadow at top/bottom for contrast */
+    opacity: 1; /* Make sure opacity is 1 */
 }
 
-/* Add text shadow for readability */
+/* Add text shadow for readability over images */
 #home h1 {
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6); /* Adjusted shadow for clarity */
 }
 #home p {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    font-size: 1.25rem; /* Kept your font size */
-    font-weight: 400;  /* Kept your font weight */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Adjusted shadow for clarity */
+    font-size: 1.25rem;
+    font-weight: 400;
 }
 
-/* Ensure accent color is still applied correctly */
+/* Ensure accent color is applied */
 #home h1 .text-yellow-300 {
     color: var(--color-accent); /* Keep Gold color */
+    /* Add a subtle shadow matching the white text if needed */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* Adjust button styles slightly if needed - optional */
-#home button:last-of-type { /* The 'VIEW FULL SYLLABUS' button */
-    background-color: rgba(0, 0, 0, 0.2); /* Add subtle background */
-    border: 1px solid white; /* Slightly thinner border */
-}
-#home button:last-of-type:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: white; /* Ensure border stays white on hover */
-    color: white; /* Ensure text stays white */
-}
-
-/* Keep hero background slider styles */
-.hero-background-slider {
-    background-color: var(--color-primary); /* Fallback background color */
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out;
-}
-
-/* Hero Section Background Slider */
-.hero-background-slider {
-    background-color: var(--color-primary); /* Fallback background color */
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out; /* Smooth transition for background images */
-}
-/* Ensure the overlay covers the background image */
-#home .absolute.inset-0 {
-    background: linear-gradient(90deg, var(--color-primary) 0%, rgba(30, 58, 138, 0.5) 100%);
-    opacity: 0.85; /* Adjust opacity as needed to ensure text readability */
-}
 /* Hero Buttons */
 #home button {
     border-radius: 9999px;
     font-weight: 700;
     transition: all 0.3s ease;
 }
-#home button:first-of-type {
+#home button:first-of-type { /* Start Your Journey */
     background-color: white;
-    color: var(--color-primary);
+    color: var(--color-primary); /* Use primary color for text */
 }
 #home button:first-of-type:hover {
     background-color: var(--color-secondary);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
-#home button:last-of-type {
-    background: transparent;
-    border: 2px solid white;
+#home button:last-of-type { /* View Full Syllabus */
+    background: rgba(0, 0, 0, 0.2); /* Subtle dark background for visibility */
+    border: 2px solid white; /* Use a slightly thicker border for visibility */
+    color: white;
 }
 #home button:last-of-type:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: white;
+    color: white;
+}
+
+/* Hero Background Slider Base Styles */
+.hero-background-slider {
+    background-color: var(--color-primary); /* Fallback color */
+    background-size: cover; /* This makes the image cover the area, potentially cropping */
+    background-position: center center; /* Center the image */
+    transition: background-image 1s ease-in-out; /* Smooth transition */
 }
 
 
