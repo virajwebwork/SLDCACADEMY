@@ -1,5 +1,8 @@
 /* --- SLDCA OFFICIAL THEME --- */
-
+* {
+    font-family: var(--font-body);
+    box-sizing: border-box; /* Add this line */
+}
 /* 1. FONT IMPORT & ROOT VARIABLES */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap');
 
@@ -150,9 +153,11 @@ header button:hover {
 /* Hero Background Slider Base Styles */
 .hero-background-slider {
     background-color: var(--color-primary); /* Fallback color */
-    background-size: cover; /* This makes the image cover the area, potentially cropping */
-    background-position: center center; /* Center the image */
-    transition: background-image 1s ease-in-out; /* Smooth transition */
+    background-size: cover;
+    background-position: center center;
+    transition: background-image 1s ease-in-out;
+    /* Adjust height if necessary - remove min-h-screen if it was there */
+    /* Keep h-[85vh] or similar if you set it */
 }
 
 
