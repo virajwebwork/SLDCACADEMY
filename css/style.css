@@ -108,7 +108,18 @@ header button:hover {
     font-size: 1.25rem;
     font-weight: 400;
 }
-
+/* Hero Section Background Slider */
+.hero-background-slider {
+    background-color: var(--color-primary); /* Fallback background color */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out; /* Smooth transition for background images */
+}
+/* Ensure the overlay covers the background image */
+#home .absolute.inset-0 {
+    background: linear-gradient(90deg, var(--color-primary) 0%, rgba(30, 58, 138, 0.5) 100%);
+    opacity: 0.85; /* Adjust opacity as needed to ensure text readability */
+}
 /* Hero Buttons */
 #home button {
     border-radius: 9999px;
