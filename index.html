@@ -4,723 +4,572 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SLDCA - Sri Lanka Document Controllers Academy | Global Excellence in Document Control Training</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-white text-gray-900 overflow-x-hidden">
+<body>
     
     <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center">
-        <div class="text-center">
-            <div class="loader mx-auto mb-4"></div>
-            <h2 class="text-xl font-heading gradient-text font-bold">Loading Excellence...</h2>
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="loader"></div>
+            <h2 class="preloader-text">Loading Excellence...</h2>
         </div>
     </div>
     
     <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass-light">
-        <nav class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <!-- ============ LOGO SECTION START - CHANGE HERE ============ -->
-                <div class="flex items-center space-x-3">
-                    <!-- Option 1: Replace this entire div with your logo image  -->
-                    <img src="assets/image/Logo.png" alt="SLDCA Logo" class="w-12 h-12 rounded-lg object-contain">
-                                      
-                    
-                    <div>
-                        <h1 class="text-lg font-bold font-heading text-navy">SLDCA</h1>
-                        <p class="text-lg font-bold text-black-600">SRI LANKA DOCUMENT CONTROLLERS ACADEMY</p>
+    <header id="site-header" class="site-header" role="navigation">
+        <nav class="header-container">
+            <div class="header-content">
+                <!-- Logo Section -->
+                <div class="logo-section">
+                    <!-- REPLACE: Change src to your actual logo path -->
+                    <img src="assets/image/Logo.png" alt="SLDCA Logo" class="logo-img">
+                    <div class="logo-text">
+                        <h1 class="logo-title">SLDCA</h1>
+                        <p class="logo-subtitle">SRI LANKA DOCUMENT CONTROLLERS ACADEMY</p>
                     </div>
                 </div>
-                <!-- ============ LOGO SECTION END ============ -->
                 
-                <div class="hidden lg:flex items-center space-x-6">
-                    <a href="#home" class="text-navy hover:text-blue-700 transition-colors font-medium text-sm">HOME</a>
-                    <a href="#about" class="text-navy hover:text-blue-700 transition-colors font-medium text-sm">ABOUT</a>
-                    <a href="#courses" class="text-navy hover:text-blue-700 transition-colors font-medium text-sm">COURSES</a>
-                    <a href="#services" class="text-navy hover:text-blue-700 transition-colors font-medium text-sm">SERVICES</a>
-                    <a href="#testimonials" class="text-navy hover:text-blue-700 transition-colors font-medium text-sm">TESTIMONIALS</a>
-                    <a href="#contact" class="text-navy hover:text-blue-700 transition-colors font-medium text-sm">CONTACT</a>
-                    <button class="px-6 py-2 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-full hover:shadow-lg hover:scale-105 transition-all font-semibold text-sm">
-                        ENROLL NOW
-                    </button>
+                <!-- Desktop Navigation -->
+                <div class="nav-desktop">
+                    <a href="#home" class="nav-link active">HOME</a>
+                    <a href="#about" class="nav-link">ABOUT</a>
+                    <a href="#courses" class="nav-link">COURSES</a>
+                    <a href="#services" class="nav-link">SERVICES</a>
+                    <a href="#testimonials" class="nav-link">TESTIMONIALS</a>
+                    <a href="#contact" class="nav-link">CONTACT</a>
+                    <button class="btn-enroll">ENROLL NOW</button>
                 </div>
                 
-                <button id="mobileMenu" class="lg:hidden text-navy">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- Mobile Menu Toggle -->
+                <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle menu">
+                    <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
                     </svg>
                 </button>
             </div>
         </nav>
         
-        <!-- Mobile Menu -->
-        <div id="mobileNavPanel" class="hidden lg:hidden glass-light border-t border-blue-100">
-            <div class="container mx-auto px-6 py-4 space-y-3">
-                <a href="#home" class="block py-2 text-navy hover:text-blue-700 font-medium text-sm">HOME</a>
-                <a href="#about" class="block py-2 text-navy hover:text-blue-700 font-medium text-sm">ABOUT</a>
-                <a href="#courses" class="block py-2 text-navy hover:text-blue-700 font-medium text-sm">COURSES</a>
-                <a href="#services" class="block py-2 text-navy hover:text-blue-700 font-medium text-sm">SERVICES</a>
-                <a href="#testimonials" class="block py-2 text-navy hover:text-blue-700 font-medium text-sm">TESTIMONIALS</a>
-                <a href="#contact" class="block py-2 text-navy hover:text-blue-700 font-medium text-sm">CONTACT</a>
-                <button class="w-full py-3 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-lg font-semibold text-sm">
-                    ENROLL NOW
-                </button>
+        <!-- Mobile Navigation Panel -->
+        <div id="mobileNavPanel" class="nav-mobile hidden">
+            <div class="nav-mobile-content">
+                <a href="#home" class="nav-link-mobile">HOME</a>
+                <a href="#about" class="nav-link-mobile">ABOUT</a>
+                <a href="#courses" class="nav-link-mobile">COURSES</a>
+                <a href="#services" class="nav-link-mobile">SERVICES</a>
+                <a href="#testimonials" class="nav-link-mobile">TESTIMONIALS</a>
+                <a href="#contact" class="nav-link-mobile">CONTACT</a>
+                <button class="btn-enroll-mobile">ENROLL NOW</button>
             </div>
         </div>
     </header>
     
-    <!-- Hero Section with Image Carousel -->
-<section id="home" class="relative h-[85vh] flex items-center justify-center overflow-hidden hero-background-slider">
-    <div class="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-800 to-transparent opacity-75"></div>
-    
-    <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
-        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
-            Empowering Professionals <br>
-             <span class="text-yellow-300">Building Global Careers.</span>
-        </h1>
-        <p class="text-lg md:text-xl mb-10 opacity-0 animate-fade-in-up animation-delay-300">
-            Transform your future with Sri Lanka's premier training in <br>
-            internationally recognized Document Control management
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 opacity-0 animate-fade-in-up animation-delay-600">
-            <button class="px-8 py-3 bg-white text-navy-900 rounded-full font-bold shadow-lg hover:bg-gray-100 transition duration-300">
-                START YOUR JOURNEY <span class="ml-2">→</span>
-            </button>
-            <button class="px-8 py-3 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-navy-900 transition duration-300">
-                VIEW FULL SYLLABUS
-            </button>
-        </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
-            <a href="#about" class="block w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-white animate-bounce">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
-                </svg>
-            </a>
-        </div>
-    </div>
-</section>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const heroSection = document.querySelector('.hero-background-slider');
-        const images = [
-            'assets/image/office photo/office (1).jpeg',
-            'assets/image/office photo/office (2).jpeg',
-            'assets/image/office photo/office (3).jpeg',
-            'assets/image/office photo/office (4).jpeg',
-            'assets/image/office photo/office (5).jpeg',
-            'assets/image/office photo/office (6).jpeg',
-            'assets/image/office photo/office (7).jpeg'
-        ];
-
-        function getRandomImage() {
-            const randomIndex = Math.floor(Math.random() * images.length);
-            return images[randomIndex];
-        }
-
-        function setHeroBackground() {
-            heroSection.style.backgroundImage = `url('${getRandomImage()}')`;
-            heroSection.style.backgroundSize = 'cover';
-            heroSection.style.backgroundPosition = 'center';
-            heroSection.style.transition = 'background-image 1s ease-in-out';
-        }
-
-        // Set an initial background
-        setHeroBackground();
-
-        // Change background every 10 seconds (10000 milliseconds)
-        setInterval(setHeroBackground, 10000);
-    });
-</script>
-    
-    
-   <!-- About Section -->
-<section id="about" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <!-- Stats Section - NO CHANGES HERE -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            <div class="text-center">
-                <h3 class="text-5xl font-bold gradient-text counter" data-target="10">0</h3>
-                <p class="text-gray-600 mt-2 font-semibold">Students Trained</p>
-            </div>
-            <div class="text-center">
-                <h3 class="text-5xl font-bold gradient-text counter" data-target="7">0</h3>
-                <p class="text-gray-600 mt-2 font-semibold">Countries Reached</p>
-            </div>
-            <div class="text-center">
-                <h3 class="text-5xl font-bold gradient-text counter" data-target="95">0</h3>
-                <p class="text-gray-600 mt-2 font-semibold">% Success Rate</p>
-            </div>
-            <div class="text-center">
-                <h3 class="text-5xl font-bold gradient-text counter" data-target="5">0</h3>
-                <p class="text-gray-600 mt-2 font-semibold">Expert Instructors</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- REPLACE: Change background-image URL in style.css or use inline style -->
+        <!-- Example: style="background-image: url('assets/image/office photo/office (1).jpeg');" -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Empowering Professionals<br>
+                <span class="hero-accent">Building Global Careers.</span>
+            </h1>
+            <p class="hero-description">
+                Transform your future with Sri Lanka's premier training in<br>
+                internationally recognized Document Control management
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-primary">START YOUR JOURNEY →</button>
+                <button class="btn-secondary">VIEW FULL SYLLABUS</button>
             </div>
         </div>
-        
-        <!-- Welcome Section WITH LOGOS ON SIDES -->
-        <div class="relative text-center mb-16">
-            <!-- LEFT LOGO -->
-            <div class="hidden lg:block absolute left-0 top-1/2 transform -translate-y-1/2">
-                <div class="bg-white rounded-3xl p-6 shadow-2xl border-4 border-blue-700">
-                    <img src="assets/image/Logo.png" alt="SLDCA Logo" class="w-32 h-32 object-contain">
+        <!-- Scroll Indicator -->
+        <a href="#about" class="scroll-indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" class="scroll-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+            </svg>
+        </a>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="section section-about">
+        <div class="container">
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="stat-number counter" data-target="10">0</h3>
+                    <p class="stat-label">Students Trained</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number counter" data-target="7">0</h3>
+                    <p class="stat-label">Countries Reached</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number counter" data-target="95">0</h3>
+                    <p class="stat-label">% Success Rate</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number counter" data-target="5">0</h3>
+                    <p class="stat-label">Expert Instructors</p>
                 </div>
             </div>
             
-            <!-- CENTER TEXT -->
-            <div>
-                <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4 text-navy">
-                    Welcome to <span class="gradient-text">SLDCA</span>
+            <!-- Welcome Header -->
+            <div class="section-header">
+                <h2 class="section-title">
+                    Welcome to <span class="text-accent">SLDCA</span>
                 </h2>
-                <p class="text-gray-700 max-w-2xl mx-auto text-lg">
+                <p class="section-subtitle">
                     Bridging the gap between Sri Lankan talent and global opportunities in Document Control
                 </p>
             </div>
             
-            <!-- RIGHT LOGO -->
-            <div class="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2">
-                <div class="bg-white rounded-3xl p-6 shadow-2xl border-4 border-blue-700">
-                    <img src="assets/image/Logo.png" alt="SLDCA Logo" class="w-32 h-32 object-contain">
-                </div>
-            </div>
-        </div>
-        
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <div class="glass-light rounded-2xl p-6 transform hover:scale-105 transition-transform card-3d">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-900 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- About Content Grid -->
+            <div class="about-grid">
+                <!-- Mission Cards -->
+                <div class="about-cards">
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                             </svg>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-navy">Our Mission</h3>
-                            <p class="text-gray-700">Equipping Sri Lankan youth with internationally recognized Document Control skills to secure valuable positions in global markets.</p>
+                        <div class="card-content">
+                            <h3 class="card-title">Our Mission</h3>
+                            <p class="card-text">Equipping Sri Lankan youth with internationally recognized Document Control skills to secure valuable positions in global markets.</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="glass-light rounded-2xl p-6 transform hover:scale-105 transition-transform card-3d">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-900 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-navy">Global Impact</h3>
-                            <p class="text-gray-700">Opening doors to careers in the Middle East, UK, Ireland, Australia,Singapore and beyond through professional training.</p>
+                        <div class="card-content">
+                            <h3 class="card-title">Global Impact</h3>
+                            <p class="card-text">Opening doors to careers in the Middle East, UK, Ireland, Australia, Singapore and beyond through professional training.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Economic Growth</h3>
+                            <p class="card-text">Contributing to Sri Lanka's economy through foreign remittances while reducing youth unemployment.</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="glass-light rounded-2xl p-6 transform hover:scale-105 transition-transform card-3d">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-900 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
+                <!-- Founder Profile -->
+                <div class="founder-profile">
+                    <div class="founder-card">
+                        <div class="founder-image">
+                            <img src="assets/image/viraj.jpeg" alt="Viraj Niroshan">
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-navy">Economic Growth</h3>
-                            <p class="text-gray-700">Contributing to Sri Lanka's economy through foreign remittances while reducing youth unemployment.</p>
+                        <div class="founder-info">
+                            <h3 class="founder-name">Viraj Niroshan</h3>
+                            <p class="founder-title">Founder & Chief Instructor</p>
+                            <p class="founder-quote">"With over 10 years of international experience, I founded SLDCA to empower Sri Lankan youth by offering world-class Document Control training. Having recognized the global demand for skilled Document Controllers, I am dedicated to providing this training in Sri Lanka to reduce unemployment and create pathways to prosperity."</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- FOUNDER PHOTO - SMALLER SIZE -->
-            <div class="relative">
-                <div class="glass-light rounded-3x1 p-6 shadow-elegant max-w-md mx-auto">
-                    <div class="w-48 h-48 mx-auto mb-4 overflow-hidden rounded-2xl">
-                        <img src="assets/image/viraj.jpeg" alt="Viraj Niroshan" class="w-full h-full object-cover">
-                    </div>
-                    <div class="text-center">
-                        <h3 class="text-2xl font-bold mb-2 text-navy">Viraj Niroshan</h3>
-                        <p class="text-blue-700 mb-3 font-semibold">Founder & Chief Instructor</p>
-                        <p class="text-gray-700 italic text-sm">"With over 10 years of international experience, I founded SLDCA to empower Sri Lankan youth by offering world-class Document Control training. Having recognized the global demand for skilled Document Controllers, I am dedicated to providing this training in Sri Lanka to reduce unemployment and create pathways to prosperity."</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
+    
     <!-- Courses Section -->
-    <section id="courses" class="py-20 bg-gradient-to-b from-white to-blue-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4 text-navy">
-                    Our <span class="gradient-text">Premium Courses</span>
+    <section id="courses" class="section section-courses">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Our <span class="text-accent">Premium Courses</span>
                 </h2>
-                <p class="text-gray-700 max-w-2xl mx-auto text-lg">
+                <p class="section-subtitle">
                     Comprehensive curriculum designed to meet global industry standards
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="courses-grid">
                 <!-- Course Card 1 -->
-                <div class="group relative">
-                    <div class="glass-light rounded-3xl p-8 h-full card-3d shadow-elegant hover:shadow-2xl transition-all">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">Featured</span>
-                            <span class="text-2xl">📚</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-navy">Professional Document Control</h3>
-                        <p class="text-gray-700 mb-4">Master the complete lifecycle of document management with ISO standards</p>
-                        <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-gray-700">
-                                <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                </svg>
-                                10 Comprehensive Modules
-                            </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                </svg>
-                                Industry Recognized Certificate
-                            </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                </svg>
-                                100% Online Learning
-                            </li>
-                        </ul>
-                        <button class="w-full py-3 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-xl hover:shadow-lg transition-all font-semibold">
-                            Enroll Now →
-                        </button>
-                    </div>
+                <div class="course-card">
+                    <div class="course-badge">Featured</div>
+                    <div class="course-icon">📚</div>
+                    <h3 class="course-title">Professional Document Control</h3>
+                    <p class="course-description">Master the complete lifecycle of document management with ISO standards</p>
+                    <ul class="course-features">
+                        <li>
+                            <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            10 Comprehensive Modules
+                        </li>
+                        <li>
+                            <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Industry Recognized Certificate
+                        </li>
+                        <li>
+                            <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            100% Online Learning
+                        </li>
+                    </ul>
+                    <button class="btn-course">Enroll Now →</button>
                 </div>
                 
                 <!-- Course Card 2 -->
-                <div class="group relative">
-                    <div class="glass-light rounded-3xl p-8 h-full card-3d shadow-elegant hover:shadow-2xl transition-all">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">Advanced</span>
-                            <span class="text-2xl">🚀</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-navy">DMS & Digital Transformation</h3>
-                        <p class="text-gray-700 mb-4">Learn modern document management systems and AI integration</p>
-                        <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-gray-700">
-                                <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                </svg>
-                                SharePoint & Aconex Training
-                            </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                </svg>
-                                AI Tools Integration
-                            </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                </svg>
-                                Practical Projects
-                            </li>
-                        </ul>
-                        <button class="w-full py-3 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-xl hover:shadow-lg transition-all font-semibold">
-                            Learn More →
-                        </button>
-                    </div>
+                <div class="course-card">
+                    <div class="course-badge">Advanced</div>
+                    <div class="course-icon">🚀</div>
+                    <h3 class="course-title">DMS & Digital Transformation</h3>
+                    <p class="course-description">Learn modern document management systems and AI integration</p>
+                    <ul class="course-features">
+                        <li>
+                            <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            SharePoint & Aconex Training
+                        </li>
+                        <li>
+                            <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            AI Tools Integration
+                        </li>
+                        <li>
+                            <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Practical Projects
+                        </li>
+                    </ul>
+                    <button class="btn-course">Learn More →</button>
                 </div>
                 
                 <!-- Course Card 3 -->
-                <div class="group relative">
-                    <div class="glass-light rounded-3xl p-8 h-full card-3d shadow-elegant hover:shadow-2xl transition-all">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">Specialized</span>
-                            <span class="text-2xl">🎯</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-navy">ISO Standards & Compliance</h3>
-                        <p class="text-gray-700 mb-4">Master international standards for quality and records management</p>
-                        <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-gray-700">
-                                <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                </svg>
-                                ISO 9001 & ISO 15489
-                            </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                </svg>
-                                Audit Preparation
-                            </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1
-                                    0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                </svg>
-                                Case Studies
-                            </li>
-                        </ul>
-                        <button class="w-full py-3 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-xl hover:shadow-lg transition-all font-semibold">
-                            View Details →
-                        </button>
-                    </div>
+                <div class="course-card">
+                    <div class="course-badge">Specialized</div>
+                    <div class="course-icon">🎯</div>
+                    <h3 class="course-title">ISO Standards & Compliance</h3>
+                    <p class="course-description">Master international standards for quality and records management</p>
+                    <ul class="course-features">
+                        <li>
+                            <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            ISO 9001 & ISO 15489
+                        </li>
+                        <li>
+                            <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Audit Preparation
+                        </li>
+                        <li>
+                            <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Case Studies
+                        </li>
+                    </ul>
+                    <button class="btn-course">View Details →</button>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4 text-navy">
-                    Complete Career <span class="gradient-text">Support Services</span>
+    <section id="services" class="section section-services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Complete Career <span class="text-accent">Support Services</span>
                 </h2>
-                <p class="text-gray-700 max-w-2xl mx-auto text-lg">
+                <p class="section-subtitle">
                     We don't just train you - we support your entire journey to international success
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass-light rounded-2xl p-6 hover:transform hover:scale-105 transition-all group shadow-elegant">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-navy">CV/Resume Making</h3>
-                    <p class="text-gray-700 text-sm">Professional CVs tailored for international Document Control positions</p>
+                    <h3 class="service-title">CV/Resume Making</h3>
+                    <p class="service-description">Professional CVs tailored for international Document Control positions</p>
                 </div>
                 
-                <div class="glass-light rounded-2xl p-6 hover:transform hover:scale-105 transition-all group shadow-elegant">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-navy">Flight Booking</h3>
-                    <p class="text-gray-700 text-sm">Complete travel arrangement support for your international journey</p>
+                    <h3 class="service-title">Flight Booking</h3>
+                    <p class="service-description">Complete travel arrangement support for your international journey</p>
                 </div>
                 
-                <div class="glass-light rounded-2xl p-6 hover:transform hover:scale-105 transition-all group shadow-elegant">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-navy">Dubai Visa Support</h3>
-                    <p class="text-gray-700 text-sm">Expert guidance for UAE visa applications and documentation</p>
+                    <h3 class="service-title">Dubai Visa Support</h3>
+                    <p class="service-description">Expert guidance for UAE visa applications and documentation</p>
                 </div>
                 
-                <div class="glass-light rounded-2xl p-6 hover:transform hover:scale-105 transition-all group shadow-elegant">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-navy">Finland Student Visa</h3>
-                    <p class="text-gray-700 text-sm">Complete consultation for Finland education opportunities</p>
+                    <h3 class="service-title">Finland Student Visa</h3>
+                    <p class="service-description">Complete consultation for Finland education opportunities</p>
                 </div>
             </div>
         </div>
     </section>
     
-<section id="testimonials" class="py-20 bg-gradient-to-b from-white to-blue-50">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4 text-navy">
-                Success <span class="gradient-text">Stories</span>
-            </h2>
-            <p class="text-gray-700 max-w-2xl mx-auto text-lg">
-                Hear from our graduates working in top companies worldwide
-            </p>
-        </div>
-
-        <div class="swiper testimonials-swiper max-w-4xl mx-auto overflow-hidden">
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide pb-12">
-                    <div class="glass-light rounded-3xl p-8 shadow-elegant h-full">
-                        <div class="flex items-center mb-6">
-                             <img src="assets/image/iresha.jpeg" alt="Iresha Subasinghe" class="w-16 h-16 rounded-full mr-4 border-4 border-blue-200">
-                            <div>
-                                <h4 class="text-xl font-bold text-navy">Iresha Subasinghe</h4>
-                                <p class="text-blue-700 font-semibold">QC Engineer (Former Document Controller), Dubai</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 italic mb-4 leading-relaxed">"As a civil engineering graduate on a visit visa, I found myself in a critical situation, running out of time to find employment. Meeting Mr. Viraj from the SL DC Academy was a significant turning point. He provided invaluable advice and guidance, suggesting a strategic career shift to become a Document Controller as a way to enter the construction industry.<br><br>In a very short period, he equipped me with the fundamental knowledge required for the role and provided exceptional support to help me prepare for interviews. Thanks to his mentorship, I successfully secured a position as a Document Controller at a construction company. His professional support didn't end there; Mr. Viraj continued to assist me with any challenges or questions I faced in my new role.<br><br>This foundational experience proved to be a fantastic stepping stone. After just over a year, I earned an internal promotion to QC Engineer, aligning with my original career goals. The Document Controller path is an excellent gateway into the construction field, allowing one to grow towards their ambitions or build a professional career in an office environment.<br><br>I wholeheartedly recommend the SL DC Academy to anyone looking to launch their career and build a bright future. Their guidance is truly transformative."</p>
-                        <div class="flex text-yellow-500">
-                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide pb-12">
-                    <div class="glass-light rounded-3xl p-8 shadow-elegant h-full">
-                        <div class="flex items-center mb-6">
-                            <img src="assets/image/hiruni.jpg" alt="Hiruni N." class="w-16 h-16 rounded-full mr-4 border-4 border-blue-200">
-                            <div>
-                                <h4 class="text-xl font-bold text-navy">Hiruni N.</h4>
-                                <p class="text-blue-700 font-semibold">Cost Control Engineer (Former Document Controller)</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 italic mb-4 leading-relaxed">"After earning my bachelor's degree in multimedia, I faced a significant setback in my first role as a multimedia officer at UAE. While searching for a new opportunity, I connected with Mr. Viraj for career advice. Following his insightful recommendation, I decided to pivot my career and train to become a Document Controller (DC).<br><br>Despite having no prior knowledge of the field, Mr. Viraj's teaching methods were so effective that I was able to grasp the material in a very short time. He also provided thorough guidance on how to approach interviews, which gave me the confidence I needed. I was thrilled to pass my interview and be selected for the job.<br><br>Even after I started, Mr. Viraj continued to support me as I navigated an unfamiliar workload and my daily tasks. His mentorship was instrumental. After about a year in the role, I was promoted to Cost Control Engineer. I believe this success was possible because he guided me to make the right decision at the right time.<br><br>For anyone who feels uncertain about their career path or is looking for a solid starting point, I highly recommend the SL DC Academy. It’s a place that can set you on the path to success. Highly recommended!"</p>
-                        <div class="flex text-yellow-500">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-pagination !bottom-0"></div>
-        </div>
-    </div>
-</section>
-    
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4 text-navy">
-                    Experience <span class="gradient-text">Our Journey</span>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section section-testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Success <span class="text-accent">Stories</span>
                 </h2>
-                <p class="text-gray-700 max-w-2xl mx-auto text-lg">
-                    Glimpses of our training sessions, student achievements, and campus life
+                <p class="section-subtitle">
+                    Hear from our graduates working in top companies worldwide
                 </p>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="group relative overflow-hidden rounded-2xl shadow-elegant">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Training Session" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <p class="text-white font-semibold">Interactive Training</p>
+            <div class="swiper testimonials-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <img src="assets/image/iresha.jpeg" alt="Iresha Subasinghe" class="testimonial-image">
+                                <div class="testimonial-info">
+                                    <h4 class="testimonial-name">Iresha Subasinghe</h4>
+                                    <p class="testimonial-position">QC Engineer (Former Document Controller), Dubai</p>
+                                </div>
+                            </div>
+                            <p class="testimonial-text">"As a civil engineering graduate on a visit visa, I found myself in a critical situation, running out of time to find employment. Meeting Mr. Viraj from the SL DC Academy was a significant turning point. He provided invaluable advice and guidance, suggesting a strategic career shift to become a Document Controller as a way to enter the construction industry..."</p>
+                            <div class="testimonial-stars">
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <img src="assets/image/hiruni.jpg" alt="Hiruni N." class="testimonial-image">
+                                <div class="testimonial-info">
+                                    <h4 class="testimonial-name">Hiruni N.</h4>
+                                    <p class="testimonial-position">Cost Control Engineer (Former Document Controller)</p>
+                                </div>
+                            </div>
+                            <p class="testimonial-text">"After earning my bachelor's degree in multimedia, I faced a significant setback in my first role as a multimedia officer at UAE. While searching for a new opportunity, I connected with Mr. Viraj for career advice. Following his insightful recommendation, I decided to pivot my career and train to become a Document Controller..."</p>
+                            <div class="testimonial-stars">
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-elegant">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=300&fit=crop" alt="Workshop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <p class="text-white font-semibold">Hands-on Workshops</p>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-elegant">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop" alt="Graduation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <p class="text-white font-semibold">Graduation Day</p>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-elegant">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop" alt="Collaboration" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <p class="text-white font-semibold">Team Projects</p>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-elegant">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" alt="Mentoring" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <p class="text-white font-semibold">1-on-1 Mentoring</p>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-elegant">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=300&fit=crop" alt="Online Learning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <p class="text-white font-semibold">Virtual Classes</p>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-elegant">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop" alt="Career Fair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <p class="text-white font-semibold">Career Guidance</p>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-elegant">
-                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop" alt="Success Stories" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <p class="text-white font-semibold">Student Success</p>
-                    </div>
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
     
     <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gradient-to-b from-white to-blue-50">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4 text-navy">
-                Start Your <span class="gradient-text">Journey Today</span>
-            </h2>
-            <p class="text-gray-700 max-w-2xl mx-auto text-lg">
-                Connect with us to transform your career and unlock global opportunities
-            </p>
-        </div>
-        
-        <div class="grid lg:grid-cols-2 gap-12">
-            <div class="glass-light rounded-3xl p-8 shadow-elegant">
-                <h3 class="text-2xl font-bold mb-6 text-navy">Send Us a Message</h3>
-                <form id="contactForm" class="space-y-6">
-                    <div>
-                        <input type="text" placeholder="Your Name" required class="w-full px-4 py-3 bg-white rounded-xl border-2 border-gray-300 focus:border-blue-700 outline-none transition-all text-gray-900">
-                    </div>
-                    <div>
-                        <input type="email" placeholder="Email Address" required class="w-full px-4 py-3 bg-white rounded-xl border-2 border-gray-300 focus:border-blue-700 outline-none transition-all text-gray-900">
-                    </div>
-                    <div>
-                        <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 bg-white rounded-xl border-2 border-gray-300 focus:border-blue-700 outline-none transition-all text-gray-900">
-                    </div>
-                    <div>
-                        <select class="w-full px-4 py-3 bg-white rounded-xl border-2 border-gray-300 focus:border-blue-700 outline-none transition-all text-gray-900">
+    <section id="contact" class="section section-contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Start Your <span class="text-accent">Journey Today</span>
+                </h2>
+                <p class="section-subtitle">
+                    Connect with us to transform your career and unlock global opportunities
+                </p>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h3 class="form-title">Send Us a Message</h3>
+                    <form id="contactForm" class="contact-form">
+                        <input type="text" placeholder="Your Name" required class="form-input">
+                        <input type="email" placeholder="Email Address" required class="form-input">
+                        <input type="tel" placeholder="Phone Number" class="form-input">
+                        <select class="form-input">
                             <option>Select Course Interest</option>
                             <option>Professional Document Control</option>
                             <option>DMS & Digital Transformation</option>
                             <option>ISO Standards & Compliance</option>
                         </select>
-                    </div>
-                    <div>
-                        <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 bg-white rounded-xl border-2 border-gray-300 focus:border-blue-700 outline-none transition-all text-gray-900"></textarea>
-                    </div>
-                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
-                        Submit Inquiry
-                    </button>
-                </form>
-            </div>
-            
-            <div>
-                <div class="glass-light rounded-3xl p-8 mb-6 shadow-elegant">
-                    <h3 class="text-2xl font-bold mb-6 text-navy">Get In Touch</h3>
-                    
-                    <div class="grid md:grid-cols-2 gap-8 mb-6">
-                        <div>
-                            <h4 class="font-bold mb-4 text-navy border-b-2 border-blue-200 pb-2">For Inquiries in Sri Lanka</h4>
-                            <div class="space-y-4">
-                                <div class="flex items-start space-x-3">
-                                    <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-5 h-5 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-navy text-sm">Phone</h5>
-                                        <p class="text-gray-700">+94 76 273 1662</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start space-x-3">
-                                    <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                         <svg class="w-5 h-5 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-navy text-sm">Location</h5>
-                                        <p class="text-gray-700">Monaragala, Sri Lanka</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h4 class="font-bold mb-4 text-navy border-b-2 border-blue-200 pb-2">For International Inquiries</h4>
-                             <div class="space-y-4">
-                                <div class="flex items-start space-x-3">
-                                    <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-5 h-5 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-navy text-sm">Phone</h5>
-                                        <p class="text-gray-700">+971 50 732 6053</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start space-x-3">
-                                    <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                         <svg class="w-5 h-5 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-navy text-sm">Location</h5>
-                                        <p class="text-gray-700">Al Rashidiya, Dubai, UAE</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="border-t border-blue-200 pt-6 space-y-4">
-                         <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-navy text-sm">General Email</h5>
-                                <p class="text-gray-700">info@sldcacademy.com</p>
-                            </div>
-                        </div>
-                    </div>
-
+                        <textarea rows="4" placeholder="Your Message" class="form-input"></textarea>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
+                    </form>
                 </div>
                 
-                <div class="grid grid-cols-2 gap-4">
-                    <button class="glass-light rounded-xl p-4 flex items-center justify-center space-x-2 hover:bg-blue-50 transition-all shadow-elegant">
-                        <svg class="w-5 h-5 text-blue-700" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
-                        <span class="font-semibold text-navy">Facebook</span>
-                    </button>
-                    <button class="glass-light rounded-xl p-4 flex items-center justify-center space-x-2 hover:bg-blue-50 transition-all shadow-elegant">
-                        <svg class="w-5 h-5 text-blue-700" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-                        <span class="font-semibold text-navy">LinkedIn</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-    
-    <!-- Footer -->
-    <footer class="py-12 bg-gradient-to-b from-blue-50 to-blue-100 border-t border-blue-200">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4 text-navy">SLDCA</h3>
-                    <p class="text-gray-700 text-sm">Sri Lanka's premier Document Control training academy, empowering professionals for global success.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4 text-navy">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#about" class="text-gray-700 hover:text-blue-700 transition-colors">About Us</a></li>
-                        <li><a href="#courses" class="text-gray-700 hover:text-blue-700 transition-colors">Courses</a></li>
-                        <li><a href="#services" class="text-gray-700 hover:text-blue-700 transition-colors">Services</a></li>
-                        <li><a href="#contact" class="text-gray-700 hover:text-blue-700 transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4 text-navy">Resources</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="text-gray-700 hover:text-blue-700 transition-colors">Download Syllabus</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-blue-700 transition-colors">Student Portal</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-blue-700 transition-colors">Career Guidance</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-blue-700 transition-colors">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4 text-navy">Newsletter</h4>
-                    <p class="text-gray-700 text-sm mb-4">Subscribe for updates and career tips</p>
-                    <div class="flex">
-                        <input type="email" placeholder="Your email" class="flex-1 px-3 py-2 bg-white border-2 border-gray-300 rounded-l-lg text-sm outline-none focus:border-blue-700">
-                        <button class="px-4 py-2 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-r-lg font-semibold">
-                            →
+                <!-- Contact Info -->
+                <div class="contact-info-wrapper">
+                    <div class="contact-info-card">
+                        <h3 class="info-title">Get In Touch</h3>
+                        
+                        <div class="contact-locations">
+                            <div class="location-block">
+                                <h4 class="location-title">For Inquiries in Sri Lanka</h4>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5>Phone</h5>
+                                        <p>+94 76 273 1662</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5>Location</h5>
+                                        <p>Monaragala, Sri Lanka</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="location-block">
+                                <h4 class="location-title">For International Inquiries</h4>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5>Phone</h5>
+                                        <p>+971 50 732 6053</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5>Location</h5>
+                                        <p>Al Rashidiya, Dubai, UAE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-email">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5>General Email</h5>
+                                    <p>info@sldcacademy.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-buttons">
+                        <button class="social-btn">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                            </svg>
+                            <span>Facebook</span>
+                        </button>
+                        <button class="social-btn">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                            </svg>
+                            <span>LinkedIn</span>
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="text-center pt-8 border-t border-blue-200">
-                <p class="text-gray-600 text-sm">© 2025 Sri Lanka Document Controllers Academy. All rights reserved.</p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">SLDCA</h3>
+                    <p class="footer-text">Sri Lanka's premier Document Control training academy, empowering professionals for global success.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Download Syllabus</a></li>
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">Career Guidance</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-text">Subscribe for updates and career tips</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email" class="newsletter-input">
+                        <button class="newsletter-btn">→</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Sri Lanka Document Controllers Academy. All rights reserved.</p>
             </div>
         </div>
     </footer>
